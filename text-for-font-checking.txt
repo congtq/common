@@ -1,0 +1,32 @@
+the quick brown fox jumps over the lazy dog
+THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+01234567890+-~_.,:;=#*/|\!$%&`'"[{()}]@<>?
+
+l/I   E/F   l/1   Z/2   o/0   O/0   g/q   B/8
+m/n   D/0   y/z   S/5   c/e   S/8   l/b   Z/7
+i/e   T/7   a/o   5/8   T/I   5/3   D/O   7/1
+
+Lower-case letter l (“el”) and upper-case letter I
+Upper-case letter E and upper-case letter F
+Lower-case letter l (“el”) and numeral 1
+Upper-case letter Z and numeral 2
+Lower-case letter o and numeral 0
+Upper-case letter O and numeral 0
+Lower-case letter g and lower-case letter q
+Upper-case letter B and numeral 8
+Lower-case letter m and lower-case letter n
+Upper-case letter D and numeral 0
+Lower-case cursive letter y and lower-case cursive letter z
+Upper-case letter S and numeral 5
+Lower-case letter c and lower-case letter e
+Upper-case letter S and numeral 8
+Lower-case cursive letter l and lower-case cursive letter b
+Upper-case letter Z and numeral 7
+Lower-case cursive letter i and lower-case cursive letter e
+Upper-case letter T and numeral 7
+Lower-case cursive letter a and lower-case cursive letter o
+Numeral 5 and numeral 8
+Upper-case letter T and upper-case letter I
+Numeral 5 and numeral 3
+Upper-case letter D and upper-case letter O
+Numeral 7 and numeral 1
