@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
+#---------------------------------------------------------------------------------------------------
 exit
-
 #---------------------------------------------------------------------------------------------------
 
+#---------------------------------------------------------------------------------------------------
 printf "\n\n\n\n" && cat ~/.bashrc
 LL_ALIAS_COMMAND='alias ll="ls --time-style='"'"'+%Y-%m-%d %H:%M:%S'"'"' -AlFh --color"'
 echo "">>~/.bashrc
@@ -11,6 +12,7 @@ echo "${LL_ALIAS_COMMAND}">>~/.bashrc
 echo 'alias llll='"'"'printf "\n\n\n\n"'"'"''>>~/.bashrc
 printf "\n\n\n\n" && cat ~/.bashrc
 source ~/.bashrc
+#---------------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------------
 printf "\n\n\n\n" && sudo yum -y update
@@ -75,8 +77,8 @@ printf "\n\n\n\n" && which yarn && yarn -v
 printf "\n\n\n\n" && which nginx
 printf "\n\n\n\n" && sudo amazon-linux-extras list | grep nginx
 printf "\n\n\n\n" && sudo amazon-linux-extras install nginx1.12
+printf "\n\n\n\n" && sudo yum -y install nginx
 printf "\n\n\n\n" && which nginx && nginx -v
-
 
 #---------------------------------------------------------------------------------------------------
 # HAProxy
@@ -154,3 +156,60 @@ printf "\n\n\n\n" && sudo systemctl restart haproxy
 # view status
 printf "\n\n\n\n" && sudo systemctl status -l haproxy
 cd ~
+
+#---------------------------------------------------------------------------------------------------
+# VerneMQ
+#---------------------------------------------------------------------------------------------------
+printf "\n\n\n\n" && which vernemq
+printf "\n\n\n\n" && wget https://bintray.com/artifact/download/erlio/vernemq/rpm/centos7/vernemq-1.4.0-1.el7.centos.x86_64.rpm -O vernemq-1.4.0-1.el7.centos.x86_64.rpm
+printf "\n\n\n\n" && sha256sum vernemq-1.4.0-1.el7.centos.x86_64.rpm
+# b0777f880133fd4948603fe238e80bef95d8b7f9745fa2055c6648740f64ed19  vernemq-1.4.0-1.el7.centos.x86_64.rpm
+printf "\n\n\n\n" && sudo yum -y install vernemq-1.4.0-1.el7.centos.x86_64.rpm
+printf "\n\n\n\n" && which vernemq && vernemq version
+
+#---------------------------------------------------------------------------------------------------
+# PostgreSQL
+#---------------------------------------------------------------------------------------------------
+printf "\n\n\n\n" && which postgres
+printf "\n\n\n\n" && sudo amazon-linux-extras list | grep postgres
+printf "\n\n\n\n" && sudo amazon-linux-extras install postgresql9.6
+printf "\n\n\n\n" && sudo yum -y install postgresql postgresql-server
+printf "\n\n\n\n" && which postgres && postgres --version
+
+#---------------------------------------------------------------------------------------------------
+# MariaDB / MySQL
+#---------------------------------------------------------------------------------------------------
+printf "\n\n\n\n" && which mysql
+(cat <<- TEMP_BASH_HERE_DOCUMENT
+# MariaDB 10.3 CentOS repository list - created 2018-07-04 06:27 UTC
+# http://downloads.mariadb.org/mariadb/repositories/
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.3/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+TEMP_BASH_HERE_DOCUMENT
+) > MariaDB.repo
+printf "\n\n\n\n" && sudo mv MariaDB.repo /etc/yum.repos.d/
+printf "\n\n\n\n" && sudo chown root:root /etc/yum.repos.d/MariaDB.repo
+printf "\n\n\n\n" && sudo yum -y install MariaDB-server MariaDB-client
+printf "\n\n\n\n" && which mysql && mysql --version
+
+#---------------------------------------------------------------------------------------------------
+# Redis
+#---------------------------------------------------------------------------------------------------
+printf "\n\n\n\n" && sudo systemctl list-unit-files | grep redis
+printf "\n\n\n\n" && sudo systemctl status -l redis
+printf "\n\n\n\n" && sudo amazon-linux-extras list | grep redis
+printf "\n\n\n\n" && sudo amazon-linux-extras install redis4.0
+printf "\n\n\n\n" && sudo yum -y install redis
+printf "\n\n\n\n" && sudo systemctl list-unit-files | grep redis
+printf "\n\n\n\n" && sudo systemctl status -l redis
+
+#---------------------------------------------------------------------------------------------------
+# RSysLog
+#---------------------------------------------------------------------------------------------------
+printf "\n\n\n\n" && sudo systemctl list-unit-files | grep rsyslog
+printf "\n\n\n\n" && sudo systemctl status -l rsyslog
+printf "\n\n\n\n" && sudo yum -y install rsyslog
+printf "\n\n\n\n" && sudo systemctl status -l rsyslog
