@@ -34,6 +34,13 @@ printf "\n\n\n\n" && pip install boto --user
 printf "\n\n\n\n" && pip install boto3 --user
 
 #---------------------------------------------------------------------------------------------------
+# AWS Command Line Interface
+#---------------------------------------------------------------------------------------------------
+printf "\n\n\n\n" && which aws && aws --version
+printf "\n\n\n\n" && pip install awscli --upgrade --user
+printf "\n\n\n\n" && which aws && aws --version
+
+#---------------------------------------------------------------------------------------------------
 # AWS EC2 External Inventory Script 
 # https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html#example-aws-ec2-external-inventory-script
 #---------------------------------------------------------------------------------------------------
