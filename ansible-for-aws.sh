@@ -24,6 +24,14 @@ printf "\n\n\n\n" && python get-pip.py --user
 printf "\n\n\n\n" && which pip && pip --version
 
 #---------------------------------------------------------------------------------------------------
+# Ansible
+#---------------------------------------------------------------------------------------------------
+# Requirement: paramiko cryptography setuptools PyYAML jinja2 pycrypto ecdsa enum34 idna cffi six ipaddress asn1crypto packaging appdirs MarkupSafe pycparser pyparsing
+printf "\n\n\n\n" && which ansible && ansible --version
+printf "\n\n\n\n" && pip install ansible --user
+printf "\n\n\n\n" && which ansible && ansible --version
+
+#---------------------------------------------------------------------------------------------------
 # boto
 #---------------------------------------------------------------------------------------------------
 printf "\n\n\n\n" && pip install boto --user
