@@ -27,6 +27,7 @@ printf "\n\n\n\n" && which pip && pip --version
 # Ansible
 #---------------------------------------------------------------------------------------------------
 # Requirement: paramiko cryptography setuptools PyYAML jinja2 pycrypto ecdsa enum34 idna cffi six ipaddress asn1crypto packaging appdirs MarkupSafe pycparser pyparsing
+# setup-x86_64.exe -q --packages=binutils,curl,cygwin32-gcc-g++,gcc-g++,git,gmp,libffi-devel,libgmp-devel,make,nano,openssh,openssl-devel,python-crypto,python-paramiko,python2,python2-devel,python2-openssl,python2-pip,python2-setuptools
 printf "\n\n\n\n" && which ansible && ansible --version
 printf "\n\n\n\n" && pip install ansible --user
 printf "\n\n\n\n" && which ansible && ansible --version
